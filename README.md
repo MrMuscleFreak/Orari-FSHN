@@ -43,6 +43,7 @@ Si fillim duhet te keni [Node](https://nodejs.org/en) edhe [git](https://git-scm
 3. Skedari ICS i gjeneruar do te gjendet ne folderin `/output`.
 
 4. Importoni skedarin ICS ne aplikacionin tuaj te kalendarit (Google Calendar, Apple Calendar, Outlook etj.).
+   - ⚠️ Kujdes ⚠️ : N.q.s doni ta importoni ne calendar ne iPhone, duhet te shkarkoni shortuct [ICS to Calendar](https://routinehub.co/download/21768/) dhe me pas mbasi ta keni kaluar file ne telefonin tuaj nepermjet whatsapp/email etj, klikoni Share -> ICS To Calendar -> Add All
 
 ![Orari FSHN](./assets/orari-gif.gif)
 
