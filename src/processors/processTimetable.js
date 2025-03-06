@@ -3,6 +3,7 @@
  * @param {string} html - The HTML content containing the timetable
  * @returns {Array} An array of lecture objects with day, time, and lecture details
  */
+
 function parseTimetableText(html) {
   // Define the days of the week in Albanian
   const dayNames = ['E Hene', 'E Marte', 'E Merkure', 'E Enjte', 'E Premte'];
@@ -29,9 +30,9 @@ function parseTimetableText(html) {
       // Only process non-empty cells
       if (!isEmpty) {
         lectures.push({
-          day: dayNames[j], // The day of the week
-          time, // Time slot (e.g., "08:00-09:00")
-          lecture: cellContent, // Lecture content (will be parsed further later)
+          day: dayNames[j],
+          time,
+          lecture: cellContent,
         });
       }
     });
@@ -45,6 +46,7 @@ function parseTimetableText(html) {
  * @param {Array} lectures - Array of raw lecture objects from parseTimetableText
  * @returns {Object} An object with days as keys and arrays of structured lecture objects as values
  */
+
 function groupLecturesByDay(lectures) {
   // Initialize the result object
   const grouped = {};
@@ -110,10 +112,10 @@ function groupLecturesByDay(lectures) {
           // Process each set of 4 parts as a separate lecture
           for (let i = 0; i < parts.length; i += 4) {
             lecturesArray.push({
-              subject: parts[i], // Subject name
+              subject: parts[i],
               type: parts[i + 1], // Lecture type (e.g., "Leksion | Seminar")
-              professor: parts[i + 2], // Professor name
-              class: parts[i + 3], // Classroom location
+              professor: parts[i + 2],
+              class: parts[i + 3],
             });
           }
         }
@@ -166,9 +168,9 @@ function groupLecturesByDay(lectures) {
 
         // Return the final structured lecture object
         return {
-          start: item.start, // Start time (e.g., "08:00")
-          end: item.end, // End time (e.g., "09:00")
-          lectures: lecturesArray, // Array of lecture details
+          start: item.start,
+          end: item.end,
+          lectures: lecturesArray,
         };
       });
   }
