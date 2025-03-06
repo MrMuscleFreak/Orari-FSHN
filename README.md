@@ -15,10 +15,12 @@ Orari FSHN eshte nje aplikacion ne "command-line" qe gjeneron skedare kalendari 
 
 ## Instalimi
 
+Si fillim duhet te keni [Node](https://nodejs.org/en) edhe [git](https://git-scm.com/) te instaluar.
+
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/MrMuscleFreak/orariFSHN.git
+   git clone https://github.com/MrMuscleFreak/orari-FSHN.git
    cd orariFSHN
    ```
 
@@ -41,6 +43,8 @@ Orari FSHN eshte nje aplikacion ne "command-line" qe gjeneron skedare kalendari 
 3. Skedari ICS i gjeneruar do te gjendet ne folderin `/output`.
 
 4. Importoni skedarin ICS ne aplikacionin tuaj te kalendarit (Google Calendar, Apple Calendar, Outlook etj.).
+
+![Orari FSHN](./assets/orari-gif.gif)
 
 ## Detaje Teknike
 
