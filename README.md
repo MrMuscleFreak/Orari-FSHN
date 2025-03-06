@@ -8,7 +8,7 @@ Orari FSHN eshte nje aplikacion ne "command-line" qe gjeneron skedare kalendari 
 
 ## Karakteristikat Kryesore
 
-- **Gjenerim i ICS:** Krijon skedare te kalendarit me ngjarje te perseritura me rregulla RRULE.
+- **Gjenerim i ICS:** Krijon skedare te kalendarit rreth orarit duke nisur nga data e krijimit deri ne fund te semestrit.
 - **Informacione te Detajuara:** Per secilen ore shfaqet emri i lendes, profesori, email-i dhe klasa.
 - **Strukture Modulare:** Projekt i ndare ne module per API, perpunim, gjenerator dhe funksione ndihmese.
 - **Interaktivitet:** Perdor nje nderfaqe "command-line" me mesazhe me ngjyra per nje eksperience me vizuale dhe te kendshme.
