@@ -34,7 +34,6 @@ async function fetchAndPrintTimetable(
   semester
 ) {
   try {
-    // Fetch the timetable data from the FSHN server
     const response = await fetch('http://37.139.119.36:81/orari/student', {
       method: 'POST',
       headers: {
@@ -44,27 +43,20 @@ async function fetchAndPrintTimetable(
       body: `dega=${dega}&viti=${viti}&paraleli=${paraleli}&submit=Afisho`,
     });
 
-    // Check if the request was successful
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
-    // Get the HTML content from the response
     const htmlResponse = await response.text();
 
-    // Process the HTML to extract structured timetable data
     const timetableData = processTimetable(htmlResponse);
 
-    // Check if any data was found in the response
     if (Object.keys(timetableData).length === 0) {
       console.log(
-        `Nuk u gjet asnje e dhene per paralelin ${paraleli} te vitit ${viti}, kontrollo vitin/degen`
+        `Nuk u gjet asnje e dhene per ${dega} viti ${viti} ${paraleli}, kontrollo vitin/degen.`
       );
-      return null; // Return null to indicate no data was found
+      return null;
     }
 
-    // Generate an ICS file from the timetable data
     createICS(timetableData, emriDeges, paraleli, viti, semester);
   } catch (error) {
-    // Log any errors that occur during the process
     console.error(error);
     return null;
   }

@@ -20,7 +20,6 @@
  */
 
 function dayToDate(dayName) {
-  // Map day names to their corresponding day numbers (1 = Monday, 2 = Tuesday, etc.)
   const dayMap = {
     Monday: 1,
     Tuesday: 2,
@@ -29,20 +28,10 @@ function dayToDate(dayName) {
     Friday: 5,
   };
 
-  // Get the current date
   const currentDate = new Date();
-
-  // Get the current day number (0 = Sunday, 1 = Monday, etc.)
   const currentDay = currentDate.getDay();
-
-  // Calculate the difference between the target day and the current day
   let difference = dayMap[dayName] - currentDay;
-
-  // If the difference is negative, it means the day has already passed this week,
-  // so add 7 to get the day in the next week
   if (difference < 0) difference += 7;
-
-  // Advance the current date by the calculated difference
   currentDate.setDate(currentDate.getDate() + difference);
 
   return currentDate;
@@ -62,11 +51,7 @@ function dayToDate(dayName) {
 
 function generateUUID() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-    // Generate a random number (0-15)
     const r = (Math.random() * 16) | 0;
-
-    // For 'x', use the random number; for 'y', use bits 0-1 of the random number OR'd with 0x8
-    // This ensures the UUID variant is correct (RFC 4122)
     return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
   });
 }

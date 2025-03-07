@@ -1,8 +1,6 @@
 /**
  * Main entry point for the FSHN Timetable Application
  */
-
-// Import required libraries and modules
 const { default: inquirer } = require('inquirer');
 const chalk = require('chalk');
 const figlet = require('figlet');
@@ -26,8 +24,6 @@ function displayHeader() {
     horizontalLayout: 'default',
     verticalLayout: 'default',
   });
-
-  // Create gradient for the title
   console.log(gradient.vice.multiline(title));
 
   console.log('\n' + chalk.cyan('Orari i Fakultetit te Shkencave te Natyres'));
@@ -44,8 +40,6 @@ async function main() {
     console.log(
       chalk.yellowBright('📚 Zgjidhni opsionet per te krijuar orarin:')
     );
-
-    // Prompt user to select a department
     const { dega: degaValue } = await inquirer.prompt([
       {
         type: 'list',
@@ -57,13 +51,9 @@ async function main() {
         })),
       },
     ]);
-
-    // Find the full option object based on the selected value
     const selectedDega = degaOptions.find(
       (option) => option.value === degaValue
     );
-
-    // Prompt user to select a year
     const { viti } = await inquirer.prompt([
       {
         type: 'list',
@@ -75,8 +65,6 @@ async function main() {
         })),
       },
     ]);
-
-    // Prompt user to select a class section
     const { paraleli } = await inquirer.prompt([
       {
         type: 'list',
@@ -88,8 +76,6 @@ async function main() {
         })),
       },
     ]);
-
-    // Prompt user to select a semester
     const { semester } = await inquirer.prompt([
       {
         type: 'list',
@@ -103,8 +89,6 @@ async function main() {
     ]);
 
     console.log('\n' + chalk.yellowBright('🔍 Duke kerkuar orarin...'));
-
-    // Call the function with user inputs
     fetchAndPrintTimetable(
       selectedDega.value,
       selectedDega.name,
@@ -117,5 +101,4 @@ async function main() {
   }
 }
 
-// Execute the main function to start the application
 main();

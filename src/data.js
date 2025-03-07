@@ -1,4 +1,3 @@
-// Used to store the options for the select elements in the form
 module.exports = {
   //storing every option in an array of objects due to inconsistency in the data values formation
   degaOptions: [
