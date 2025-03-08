@@ -13,9 +13,6 @@ const {
   semesterOptions,
 } = require('./data.js');
 
-/**
- * Display a stylish ASCII art header with the app name
- */
 function displayHeader() {
   console.clear();
 
