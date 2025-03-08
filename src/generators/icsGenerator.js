@@ -91,7 +91,7 @@ function createICS(timetableData, emriDeges, paraleli, viti, semester) {
       }
 
       // Process each lecture in the time slot
-      // (A time slot can have multiple lectures, e.g., for split classes)
+      // (A time slot can have multiple lectures, for split classes)
       timeSlot.lectures.forEach((lecture) => {
         try {
           const startDate = new Date(baseDate);
@@ -175,11 +175,10 @@ function createICS(timetableData, emriDeges, paraleli, viti, semester) {
             .replace(' ', '.')}@fshn.edu.al`;
 
           const escapedDescription = description.replace(/\n/g, '\\n');
-          const escapedSubject = (lecture.subject || 'Unnamed Lecture').replace(
-            /[,;\\]/g,
-            '\\$&'
-          );
-          const escapedLocation = (lecture.class || 'Unknown Location').replace(
+          const escapedSubject = (
+            `${lecture.subject} - ${lecture.type}` || 'Unnamed Lecture'
+          ).replace(/[,;\\]/g, '\\$&');
+          const escapedLocation = (lecture.class || 'Unknown Class').replace(
             /[,;\\]/g,
             '\\$&'
           );

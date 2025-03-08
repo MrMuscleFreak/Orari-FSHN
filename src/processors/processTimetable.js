@@ -76,7 +76,7 @@ function groupLecturesByDay(lectures) {
           last.end === item.start
         ) {
           last.end = item.end;
-          return; // Skip adding this item separately
+          return;
         }
       }
       merged.push(item);
@@ -84,7 +84,7 @@ function groupLecturesByDay(lectures) {
 
     // Process each merged lecture to extract detailed information
     grouped[day] = merged
-      .filter((item) => item.lecture !== '') // Skip empty lectures
+      .filter((item) => item.lecture !== '')
       .map((item) => {
         const parts = item.lecture.split('|').map((s) => s.trim());
         let lecturesArray = [];
@@ -93,7 +93,7 @@ function groupLecturesByDay(lectures) {
           for (let i = 0; i < parts.length; i += 4) {
             lecturesArray.push({
               subject: parts[i],
-              type: parts[i + 1], // Lecture type (e.g., "Leksion | Seminar")
+              type: parts[i + 1],
               professor: parts[i + 2],
               class: parts[i + 3],
             });
