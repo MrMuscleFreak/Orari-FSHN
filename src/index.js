@@ -77,7 +77,7 @@ async function main() {
       {
         type: 'list',
         name: 'semester',
-        message: chalk.green('Zgjidhni Semestrin:'),
+        message: chalk.green('Zgjidhni Semestrin: '),
         choices: semesterOptions.map((option, index) => ({
           name: `${chalk.cyan(index + 1)}. ${option.name}`,
           value: option.value,
@@ -85,7 +85,6 @@ async function main() {
       },
     ]);
 
-    console.log('\n' + chalk.yellowBright('🔍 Duke kerkuar orarin...'));
     fetchAndPrintTimetable(
       selectedDega.value,
       selectedDega.name,

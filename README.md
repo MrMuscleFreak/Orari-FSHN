@@ -54,10 +54,6 @@ Si fillim duhet te keni [Node](https://nodejs.org/en) edhe [git](https://git-scm
 - **Gjenerimi i ICS:** Skedari ICS perfshin evente te cilat perseriten cdo jave deri ne fund te semestrit dhe permban informacione te detajuara per çdo ore (lende, profesori, email, klasen).
 - **Ngjyra ne Konsole:** Aplikacioni perdor module si chalk, figlet dhe gradient-string per nje nderfaqe vizuale terheqese ne terminal.
 
-## Kontributet
-
-Kontributet jane te mireseardhura! Ju lutem, dergoni nje Pull Request ne GitHub.
-
 ## Licenca
 
 Ky projekt eshte licencuar sipas Licences MIT.

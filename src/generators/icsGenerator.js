@@ -14,7 +14,7 @@
 
 const fs = require('fs');
 const chalk = require('chalk');
-const { generateUUID, dayToDate } = require('../utils/utils');
+const { generateUUID, dayToDate, printTimetable } = require('../utils/utils');
 
 /**
  * Creates an ICS file from timetable data
@@ -230,20 +230,14 @@ function createICS(timetableData, emriDeges, paraleli, viti, semester) {
   fs.writeFileSync(`output/${filename}`, icsContent.join('\r\n'), 'utf8');
 
   console.log(
-    chalk.green('✅ ') +
+    chalk.green('\n✅ ') +
       chalk.green(`Orari u krijua me sukses: `) +
       chalk.greenBright.bold(`output/${filename}`)
   );
   console.log(
-    chalk.blue('📊 ') +
-      chalk.blue(
-        `Permbledhje: ${totalEvents} evente u shtuan ne kalendar nga ${daysProcessed} dite te javes.`
-      )
-  );
-  console.log(
     chalk.magenta('💡 ') +
       chalk.magenta(
-        `Keshille: Importoni skedarin ne aplikacionin tuaj te kalendarit per te pare orarin.`
+        `Importoni skedarin ne aplikacionin tuaj te kalendarit per te pare orarin.`
       )
   );
 }
